@@ -1,6 +1,21 @@
 # Ember-cli-betamax
 
-This README outlines the details of collaborating on this Ember addon.
+
+## Installation
+
+* (when published) npm install --save-dev ember-cli-betamax
+* ember generate  ember-cli-betamax
+* add the following to your tests/test-helper file:
+```
+import cassette from './helpers/cassette';
+import insertCassette from 'ember-cli-betamax/addon/utils/insert-cassette';
+
+insertCassette(cassette);
+```
+
+
+
+Collaborating on this Ember addon.
 
 ## Installation
 
