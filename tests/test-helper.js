@@ -2,11 +2,6 @@ import resolver from './helpers/resolver';
 import {
   setResolver
 } from 'ember-qunit';
-import {
-  startServer,
-  stopServer,
-  setupServer
-} from 'ember-cli-betamax/utils/fake-server';
 import cassette from './helpers/cassette';
 import insertCassette from 'ember-cli-betamax/addon/utils/insert-cassette';
 
