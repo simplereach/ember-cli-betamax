@@ -3,7 +3,7 @@ import {
   setResolver
 } from 'ember-qunit';
 import cassette from './helpers/cassette';
-import insertCassette from 'ember-cli-betamax/addon/utils/insert-cassette';
+import insertCassette from 'ember-cli-betamax/utils/insert-cassette';
 
 setResolver(resolver);
 
