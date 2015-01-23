@@ -6,9 +6,9 @@ import {
   startServer,
   stopServer,
   setupServer
-} from './helpers/fake-server';
+} from 'ember-cli-betamax/utils/fake-server';
 import cassette from './helpers/cassette';
-import recorder from './helpers/betamax-recorder';
+import insertCassette from 'ember-cli-betamax/addon/utils/insert-cassette';
 
 setResolver(resolver);
 
@@ -18,20 +18,5 @@ QUnit.config.urlConfig.push({ id: 'nocontainer', label: 'Hide container' });
 var containerVisibility = QUnit.urlParams.nocontainer ? 'hidden' : 'visible';
 document.getElementById('ember-testing-container').style.visibility = containerVisibility;
 
+insertCassette(cassette);
 
-QUnit.done(function(){
-  stopServer();
-  //if we are not in testem, download new casettes.
-  if(QUnit.urlParams && QUnit.urlParams.record){
-    recorder.download();
-  }
-});
-
-QUnit.begin(function(){
-  startServer();
-  //if record is not selected, use recordings
-  if(!(QUnit.urlParams && QUnit.urlParams.record)){
-    setupServer(cassette);
-  }
-  recorder.setup();
-});
