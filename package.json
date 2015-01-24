@@ -1,8 +1,8 @@
 {
   "name": "ember-cli-betamax",
-  "version": "0.0.4",
+  "version": "0.0.5",
 
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Allows for the recording of API responses.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -16,7 +16,7 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "André Malan",
   "license": "MIT",
   "repository": {
     "type": "git",
