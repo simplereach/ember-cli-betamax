@@ -16,7 +16,7 @@ insertCassette(cassette);
 
 ## Creating a recording
 
-* in /tests add the parameter "record=true" eg /tests?record=true
+* in a QUnit test click on the "Record API Queries checkbox
 * when the tests are finished a file will automatically be downloaded
 * replace the current cassette.js in tests/helpers with the new cassette.js
 
