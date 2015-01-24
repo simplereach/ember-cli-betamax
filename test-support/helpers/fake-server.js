@@ -1,5 +1,3 @@
-import sinon from 'sinon';
-
 var server;
 
 export function startServer(){

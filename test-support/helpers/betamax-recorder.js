@@ -1,6 +1,6 @@
 import {
   getServer
-} from '../helpers/fake-server';
+} from './fake-server';
 
 var responses = [], strings = [];
 

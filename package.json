@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-betamax",
-  "version": "0.0.5",
+  "version": "0.0.6",
 
   "description": "Allows for the recording of API responses.",
   "directories": {
