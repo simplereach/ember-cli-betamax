@@ -10,12 +10,11 @@ Betamax.prototype.contentFor = function(type, config) {
 };
 
 Betamax.prototype.included = function(app) {
-  app.import('./bower_components/sinon/index.js');
-  app.import('./vendor/sinon-shim.js', {
-    exports: {
-      'sinon': ['default']
-    }
-  });
+  if (app.tests) {
+    app.import('bower_components/sinon/index.js', {
+      type: 'test'
+    });
+  }
 };
 
 module.exports = Betamax;
