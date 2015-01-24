@@ -6,6 +6,7 @@ module.exports = {
     description: 'record api queries to cassettes',
 
     afterInstall: function( options ) {
+ 
             // Import statement
         var firstFile          = 'tests/test-helper.js',
             firstText          = "import insertCassette from './helpers/insert-cassette';"  + EOL +
@@ -19,11 +20,16 @@ module.exports = {
             secondLocationText = "QUnit.config.urlConfig.push({ id: 'nocontainer', label: 'Hide container' });" + EOL;
 
             // Import statement
-        return this.insertIntoFile( firstFile, firstText, { after: firstLocationText } )
+            //
+            return this.addBowerPackageToProject('http://sinonjs.org/releases/sinon-1.12.2.js')
+
+            .then(function(){
+              return this.insertIntoFile( firstFile, firstText, { after: firstLocationText } )
+            }.bind(this))
 
             // Execution of registration function
             .then( function() {
-                return this.insertIntoFile( secondFile, secondText, { after: secondLocationText } );
+              return this.insertIntoFile( secondFile, secondText, { after: secondLocationText } );
             }.bind(this))
     },
 
