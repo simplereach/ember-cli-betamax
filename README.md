@@ -3,38 +3,20 @@
 
 ## Installation
 
-* (when published) npm install --save-dev ember-cli-betamax
+* npm install simplereach/ember-cli-betamax --save-dev
 * ember generate  ember-cli-betamax
-* add the following to your tests/test-helper file:
+* this *should* add the following to your tests/test-helper file:
+
 ```
 import cassette from './helpers/cassette';
-import insertCassette from 'ember-cli-betamax/addon/utils/insert-cassette';
+import insertCassette from './helpers/insert-cassette';
 
 insertCassette(cassette);
 ```
 
+## Creating a recording
 
+* in /tests add the parameter "record=true" eg /tests?record=true
+* when the tests are finished a file will automatically be downloaded
+* replace the current cassette.js in tests/helpers with the new cassette.js
 
-Collaborating on this Ember addon.
-
-## Installation
-
-* `git clone` this repository
-* `npm install`
-* `bower install`
-
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
