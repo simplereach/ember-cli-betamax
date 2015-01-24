@@ -1,8 +1,7 @@
 {
   "name": "ember-cli-betamax",
-  "version": "0.0.6",
-
-  "description": "Allows for the recording of API responses.",
+  "version": "0.1.0",
+  "description": "Allows for the recording and playback of API responses. - probably not fit for general consumption yet",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -12,17 +11,17 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplereach/ember-cli-betamax.git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
   "author": "André Malan",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/simplereach/ember-cli-betamax.git"
-  },
   "devDependencies": {
+    "body-parser": "^1.10.2",
     "broccoli-asset-rev": "^2.0.0",
     "broccoli-ember-hbs-template-compiler": "^1.6.1",
     "ember-cli": "0.1.9",

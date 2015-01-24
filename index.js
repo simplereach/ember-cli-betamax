@@ -1,20 +1,19 @@
-function Betamax(project) {
-  this.name = 'ember-cli-betamax';
-  this.project = project;
-}
+/* jshint node: true */
+'use strict';
 
-Betamax.prototype.contentFor = function(type, config) {
-  if (type === 'test-head-footer') {
-    return '<h1>Insert betamax code here... I think</h1>';
+module.exports = {
+  name: 'ember-cli-betamax',
+  contentFor: function(type, config) {
+    if (type === 'test-head-footer') {
+      return "<script>console.log('betamax was here');</script>";
+    }
+  },
+
+  included: function(app) {
+    if (app.tests) {
+      app.import('bower_components/sinon/index.js', {
+        type: 'test'
+      });
+    }
   }
 };
-
-Betamax.prototype.included = function(app) {
-  if (app.tests) {
-    app.import('bower_components/sinon/index.js', {
-      type: 'test'
-    });
-  }
-};
-
-module.exports = Betamax;

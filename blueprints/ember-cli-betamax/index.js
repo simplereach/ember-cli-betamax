@@ -15,9 +15,8 @@ module.exports = {
 
 
             // Execution of registration function
-            secondFile         = 'tests/test-helper.js',
             secondText         = "insertCassette(cassette);",
-            secondLocationText = "QUnit.config.urlConfig.push({ id: 'nocontainer', label: 'Hide container' });" + EOL;
+            secondLocationText = "setResolver(resolver);" + EOL;
 
             // Import statement
             //
@@ -29,7 +28,7 @@ module.exports = {
 
             // Execution of registration function
             .then( function() {
-              return this.insertIntoFile( secondFile, secondText, { after: secondLocationText } );
+              return this.insertIntoFile( firstFile, secondText, { after: secondLocationText } );
             }.bind(this))
     },
 
