@@ -6,7 +6,7 @@ module.exports = {
     description: 'record api queries to cassettes',
 
     afterInstall: function( options ) {
- 
+
             // Import statement
         var firstFile          = 'tests/test-helper.js',
             firstText          = "import insertCassette from './helpers/insert-cassette';"  + EOL +
@@ -20,7 +20,7 @@ module.exports = {
 
             // Import statement
             //
-            return this.addBowerPackageToProject('http://sinonjs.org/releases/sinon-1.12.2.js')
+            return this.addBowerPackageToProject('sinon=http://sinonjs.org/releases/sinon-1.12.2.js')
 
             .then(function(){
               return this.insertIntoFile( firstFile, firstText, { after: firstLocationText } )
@@ -30,7 +30,5 @@ module.exports = {
             .then( function() {
               return this.insertIntoFile( firstFile, secondText, { after: secondLocationText } );
             }.bind(this))
-    },
-
-    normalizeEntityName: function() {}
+    }
 };
