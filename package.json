@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-betamax",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Allows for the recording and playback of API responses, Sort of like Rails VCR, but for Ember CLI",
   "directories": {
     "doc": "doc",
