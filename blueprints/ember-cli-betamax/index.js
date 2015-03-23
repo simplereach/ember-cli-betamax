@@ -30,5 +30,7 @@ module.exports = {
             .then( function() {
               return this.insertIntoFile( firstFile, secondText, { after: secondLocationText } );
             }.bind(this))
-    }
+    },
+    //this is neccessary for ember generate to work
+    normalizeEntityName: function() {}
 };
