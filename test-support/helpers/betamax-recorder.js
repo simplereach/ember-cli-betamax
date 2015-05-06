@@ -3,6 +3,7 @@ import {
 } from './fake-server';
 
 var responses = [], strings = [];
+var allResponseUrls = [];
 
 //turning headers into js is a real pain
 function parseResponseHeaders(headerStr) {
@@ -26,6 +27,9 @@ function parseResponseHeaders(headerStr) {
 export default {
   setup: function() {
     var server = getServer();
+    server.responses.mapBy('url').forEach(function(response) {
+      allResponseUrls[response] = true;
+    });
 
     //listen to incoming xhr requests
     $( document ).ajaxSuccess(function( event, xhr, settings ) {
@@ -38,8 +42,9 @@ export default {
         headers: parseResponseHeaders(xhr.getAllResponseHeaders())
       };
       //if response isn't in old or new cassettes, add it to new one
-      if(!responses.mapBy('url').concat(server.responses.mapBy('url')).uniq().contains(url)){
+      if(!allResponseUrls['url']) {
         responses.push(newResponse);
+        allResponseUrls[newResponse.url] = true;
 
         //ensure that if a request is added to new cassette, it 
         //doesn't hit the server again
@@ -56,7 +61,6 @@ export default {
   },
 
   download: function() {
-
     //convert responses into string expected by sinon
     strings.push("export default function(server) {\n\n");
     if (responses.length > 0){
@@ -70,7 +74,6 @@ export default {
       });
 
       strings.push("}");
-
       //html 5 for downloading recordings
       var blob = new window.Blob(strings);
       var encodedUri = window.URL.createObjectURL(blob);
