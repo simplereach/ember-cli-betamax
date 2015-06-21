@@ -42,7 +42,7 @@ export default {
         headers: parseResponseHeaders(xhr.getAllResponseHeaders())
       };
       //if response isn't in old or new cassettes, add it to new one
-      if(!allResponseUrls['url']) {
+      if(!allResponseUrls[url]) {
         responses.push(newResponse);
         allResponseUrls[newResponse.url] = true;
 
