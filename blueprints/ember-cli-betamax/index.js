@@ -20,7 +20,7 @@ module.exports = {
 
             // Import statement
             //
-            return this.addBowerPackageToProject('sinon=http://sinonjs.org/releases/sinon-1.12.2.js')
+            return this.addBowerPackageToProject('sinon', 'http://sinonjs.org/releases/sinon-1.12.2.js')
 
             .then(function(){
               return this.insertIntoFile( firstFile, firstText, { after: firstLocationText } )
